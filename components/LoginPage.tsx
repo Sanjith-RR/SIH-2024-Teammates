@@ -4,16 +4,18 @@ import { GlobeDemo } from './ThreeGlobe'
 const LoginPage = () => {
   return (
     <main className='flex w-screen h-screen items-center justify-center bg-gray-200'>
+        <div className='fixed w-full'>
         <GlobeDemo/>
-        <div>
+        </div>
+        <div className='relative z-50 bg-white'>
             <h1>Login Page</h1>
             <form action="">
                 <label>Username</label>
-                <input className='bg-gray-100 block'/>
+                <input className='bg-gray-500 block'/>
                 <label>Password</label>
-                <input className='bg-gray-100 block'/>
+                <input className='bg-gray-500 block'/>
             </form>
-        </div>
+        </div> *
     </main>
 )
 }
