@@ -1,6 +1,7 @@
 import React from 'react';
 import { GlobeDemo } from './ThreeGlobe';
-import './LoginPage.css';  // Import the CSS file for styling
+import './LoginPage.css';  
+import {  signIn } from 'next-auth/react';
 
 const LoginPage: React.FC = () => {
     // const handleGoogleLogin = async () => {
@@ -11,7 +12,6 @@ const LoginPage: React.FC = () => {
     //       console.error('Error during Google login:', error);
     //     }
     //   };
-
   return (
     <main className='flex w-screen h-screen items-center justify-center bg-gray-200'>
       <div className='fixed w-full h-full'>
@@ -53,8 +53,7 @@ const LoginPage: React.FC = () => {
           {
            }
            {/* <img src="\ico_google.jpg" alt="Lock Icon" className="google" /> */}
-          <button type='button' className='google-login-btn'
-        //    onClick={handleGoogleLogin}
+          <button type='button' className='google-login-btn' onClick={() => signIn('google', { callbackUrl: 'http://localhost:3000' })}
            >
             Continue with Google
           </button>
