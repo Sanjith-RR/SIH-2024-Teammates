@@ -20,7 +20,7 @@ export default function Home() {
 
   if (!typedSession) {
     return (
-      <main className="h-screen w-screen">
+      <main className="h-screen w-screen bg-blue-400">
         <header className="h-[10vh] bg-blue-950 flex items-center justify-center">  
           <div className="bg-white w-[90%] md:w-[60%] lg:w-[30%] rounded-sm flex justify-between h-[50%]">
             <div className="flex">
@@ -36,30 +36,35 @@ export default function Home() {
           </div>
         </header>
         {/* Adjusted the circle to be responsive and visible */}
-        <div className="bg-blue-950 rounded-full flex items-center justify-end  text-center text-2xl md:text-3xl lg:text-4xl absolute text-white"
-             style={{
-               width: "45vw", 
-               height: "45vw", 
-               left: "-1%", 
-               top: "10%", 
-               transform: "translate(-50%, -50%)",
-               maxWidth: "75vh", 
-               maxHeight: "75vh"
-             }}>
-          <div className="mt-[10vh] mr-[10vw]">
+        <div className="bg-blue-950 rounded-full flex items-center justify-end text-center text-2xl md:text-3xl lg:text-4xl absolute text-white 
+  w-[40vw] h-[40vw] left-[-1%] top-[2%] transform translate-x-[-50%] translate-y-[-50%] max-w-[75vh] max-h-[75vh]">
+
+          <div className="mt-[30vh] mr-[3vw]">
             <span className="text-blue-700">S</span>
             hinza {" "}
             <span className="text-blue-700">J</span>
             inzai
           </div>
         </div>
-        <div className="flex flex-col md:flex-row items-center justify-center text-black mt-6 md:mt-0">
-          <div className="mb-4 md:mb-0 md:mr-4">
+        <div className="flex flex-col gap-[4vw] md:flex-row items-center justify-end  mt-6 md:mt-[5vh] text-2xl text-white mr-[3vw]">
+          <div className="">
             <h1>Map</h1>
           </div>
           <div>
             <h1>Features</h1>
           </div>
+          <div>
+            <h1>Demo</h1>
+          </div>
+          <div>
+            <h1>About Us</h1>
+          </div>
+          <div className="bg-blue-800 rounded-lg border border-white px-3 py-1">
+            <h1>Get Started</h1>
+          </div>
+        </div>
+        <div className="text-white text-center text-4xl mt-[6vh] font-semibold">
+          <h1>Welcome To Shinza Jenkai!</h1>
         </div>
       </main>
     );
