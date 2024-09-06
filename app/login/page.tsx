@@ -1,10 +1,13 @@
 'use client';
 import LoginPage from '@/components/login/LoginPage'
 import React from 'react'
-
+import Header from '../header';
 const page = () => {
   return (
-    <LoginPage/>
+    <main>
+      <Header/>
+      <LoginPage/>
+    </main>
   )
 }
 

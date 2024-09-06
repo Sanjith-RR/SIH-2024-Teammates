@@ -20,8 +20,8 @@ export default function Home() {
       if (typedSession) {
         return (
           <div className="mt-[20vh]">
-            Signed in as {typedSession.user.name} <br />
-            Email: {typedSession.user.email} <br />
+            Signed in as {typedSession?.user.name} <br />
+            Email: {typedSession?.user.email} <br />
             <button onClick={() => signOut()}>Sign out</button>
           </div>
         );
@@ -30,9 +30,9 @@ export default function Home() {
         router.push('/login')
       }
     
-  return (
-    <div>
-      <LoginPage/>
-    </div>
-  );
+  // return (
+  //   <div>
+  //     <LoginPage/>
+  //   </div>
+  // );
 }

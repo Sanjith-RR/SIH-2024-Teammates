@@ -18,7 +18,7 @@ const LoginPage: React.FC = () => {
   }
   return (
     <main className='flex w-screen h-screen items-center justify-center bg-gray-200'>
-      <div className='fixed w-full h-full'>
+      <div className='fixed w-full h-full -top-[2%]'>
         <GlobeDemo />
       </div>
       <div className='login-container relative z-50'>
