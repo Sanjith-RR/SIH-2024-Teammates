@@ -3,9 +3,10 @@ import LoginPage from "@/components/login/LoginPage";
 import RegisterPage from "@/components/register/RegisterPage";
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { Session } from 'next-auth';
-
+import { useRouter } from "next/navigation";
 export default function Home() {
   const { data: session } = useSession();
+  const router =useRouter();
   type SessionType = Session & {
         user: {
           name: string | null;
@@ -25,11 +26,13 @@ export default function Home() {
           </div>
         );
       }
+      else{
+        router.push('/login')
+      }
     
   return (
     <div>
-      <RegisterPage/>
-      {/* <LoginPage/> */}
+      <LoginPage/>
     </div>
   );
 }

@@ -2,8 +2,9 @@ import React from 'react';
 import { GlobeDemo } from './ThreeGlobe';
 import './LoginPage.css';  
 import {  signIn } from 'next-auth/react';
-
+import { useRouter } from 'next/navigation';
 const LoginPage: React.FC = () => {
+  const router =useRouter();
     // const handleGoogleLogin = async () => {
     //     try {
     //       const result = await signInWithPopup(auth, provider);
@@ -12,6 +13,9 @@ const LoginPage: React.FC = () => {
     //       console.error('Error during Google login:', error);
     //     }
     //   };
+  const redirectToRegister=()=>{
+    router.push('/register')
+  }
   return (
     <main className='flex w-screen h-screen items-center justify-center bg-gray-200'>
       <div className='fixed w-full h-full'>
@@ -64,7 +68,7 @@ const LoginPage: React.FC = () => {
           </button>
         </form>
         <div className='not-yet'>
-            <h3>Not a member yet? <button>Register</button></h3>
+            <h3>Not a member yet? <button onClick={()=>redirectToRegister()}>Register</button></h3>
         </div>
       </div>
     </main>

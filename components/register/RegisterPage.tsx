@@ -2,14 +2,18 @@ import React from 'react';
 import { GlobeDemo } from './ThreeGlobe';
 import './RegisterPage.css';
 import { signIn } from 'next-auth/react';
-
+import { useRouter } from 'next/navigation';
 const RegisterPage: React.FC = () => {
+  const router =useRouter();
+  const redirectToLogin=()=>{
+    router.push('/login')
+  }
   return (
-    <main className='flex w-screen h-screen items-center justify-center bg-gray-200'>
+    <main className='flex w-screen h-screen items-center justify-center bg-gray-200 '>
       <div className='fixed w-full h-full'>
         <GlobeDemo />
       </div>
-      <div className='register-container relative z-50'>
+      <div className='register-container relative z-50 top-[14vh]'>
         <div className='logr'>
           <h1 className='mel-text'>Register!</h1>
           <h2 className='keel-text'>Create your account</h2>
@@ -85,7 +89,7 @@ const RegisterPage: React.FC = () => {
             Continue with Google
           </button>
         </form>
-        <div className='text-white text-center'>Already a member? <button>Sign in </button></div>
+        <div className='text-white text-center'>Already a member? <button onClick={()=>redirectToLogin()}>Sign in </button></div>
       </div>
     </main>
   );
