@@ -1,5 +1,6 @@
 'use client'
 import LoginPage from "@/components/login/LoginPage";
+import RegisterPage from "@/components/register/RegisterPage";
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { Session } from 'next-auth';
 
@@ -27,7 +28,8 @@ export default function Home() {
     
   return (
     <div>
-      <LoginPage/>
+      <RegisterPage/>
+      {/* <LoginPage/> */}
     </div>
   );
 }
