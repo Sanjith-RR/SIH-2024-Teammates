@@ -10,7 +10,7 @@ const RegisterPage: React.FC = () => {
   }
   return (
     <main className='flex w-screen h-screen items-center justify-center bg-gray-200 '>
-      <div className='fixed w-full h-full'>
+      <div className='fixed w-full h-full -top-[2%]'>
         <GlobeDemo />
       </div>
       <div className='register-container relative z-50 top-[14vh]'>

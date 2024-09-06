@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 
-const World = dynamic(() => import("../login/ui/globe").then((m) => m.World), {
+const World = dynamic(() => import("./ui/globe").then((m) => m.World), {
   ssr: false,
 });
 
@@ -413,7 +413,7 @@ export function GlobeDemo() {
         >
         </motion.div>
         <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white z-40" />
-        <div className="absolute w-full -bottom-20 h-72 md:h-full z-10 -left-40">
+        <div className="absolute w-full -bottom-10 h-72 md:h-full z-10 -left-60">
           <World data={sampleArcs} globeConfig={globeConfig} />
         </div>
       </div>
