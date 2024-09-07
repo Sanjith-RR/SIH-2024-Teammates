@@ -7,6 +7,9 @@ import { useRouter } from "next/navigation";
 
 export default function Home() {
   const { data: session } = useSession();
+  const redirectToMap = () => {
+    router.push('/map');
+  }
   const router = useRouter();
   type SessionType = Session & {
         user: {
@@ -48,19 +51,19 @@ export default function Home() {
         </div>
         <div className="flex flex-col gap-[4vw] md:flex-row items-center justify-end  mt-6 md:mt-[5vh] text-2xl text-white mr-[3vw]">
           <div className="">
-            <h1>Map</h1>
+            <button onClick={()=>redirectToMap()}>Map</button>
           </div>
           <div>
-            <h1>Features</h1>
+            <button>Features</button>
           </div>
           <div>
-            <h1>Demo</h1>
+            <button>Demo</button>
           </div>
           <div>
-            <h1>About Us</h1>
+            <button>About Us</button>
           </div>
           <div className="bg-blue-800 rounded-lg border border-white px-3 py-1">
-            <h1>Get Started</h1>
+            <button>Get Started</button>
           </div>
         </div>
         <div className="text-white text-center text-4xl mt-[6vh] font-semibold">
