@@ -1,6 +1,8 @@
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const LandingPage = () => {
+  const navigate=useRouter();
   return (
     <div className="h-screen w-screen bg-gradient-to-b from-[#347092] to-[#5aa6d9] flex flex-col">
       {/* Search Bar Header */}
@@ -52,9 +54,9 @@ const LandingPage = () => {
       <header className="w-full flex justify-between h-[7vh] items-center p-6   text-white shadow-md">
         <h1 className="text-2xl font-bold">Shinka Jinzai</h1>
         <nav className="flex w-[50%] justify-around">
-          <a href="#" className="hover:text-gray-300">Menu</a>
+          <button onClick={(e)=>navigate.push("/map")}> Map </button>
           <a href="#" className="hover:text-gray-300">Features</a>
-          <a href="#" className="hover:text-gray-300">Demo</a>
+          <button onClick={(e)=>navigate.push("/demo")}> Demo</button>
           <a href="#" className="hover:text-gray-300">About us</a>
         </nav>
         <button className="border px-4 py-2 rounded text-white hover:bg-white hover:text-[#0a2540]">
