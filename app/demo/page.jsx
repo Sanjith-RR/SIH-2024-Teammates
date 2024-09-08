@@ -22,7 +22,7 @@ const EarthViewer = () => {
           title="Earth Viewer"
           className="absolute top-0 left-0 w-full h-full border-0"
           scrolling="no"
-          allow="fullscreen"
+        sandbox="allow-same-origin allow-scripts allow-forms"
         />
       </div>
     </div>
