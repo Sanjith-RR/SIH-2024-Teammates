@@ -1,95 +1,32 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef } from "react";
 
 const EarthViewer = () => {
   const iframeRef = useRef(null);
-
-  useEffect(() => {
-    const iframe = iframeRef.current;
-    const originalWindowOpen = window.open;
-
-    if (iframe) {
-      // Override global window.open to load URL inside the iframe
-      window.open = function (url) {
-        iframe.src = url;
-      };
-
-      iframe.onload = function () {
-        try {
-          const iframeWindow = iframe.contentWindow;
-
-          // Override window.open inside the iframe (if same-origin)
-          iframeWindow.open = function (url) {
-            iframe.src = url;
-          };
-
-          const iframeDocument =
-            iframe.contentDocument || iframe.contentWindow.document;
-
-          // Add a mutation observer to detect any changes to the iframe's location
-          const observer = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-              if (
-                mutation.type === "attributes" &&
-                mutation.attributeName === "src"
-              ) {
-                const newSrc = iframe.src;
-                // If the new src is outside your site, prevent it
-                if (!newSrc.startsWith("https://earth.nullschool.net")) {
-                  // Prevent external redirection
-                  iframe.src = "https://earth.nullschool.net/#current/wind/surface/level/orthographic";
-                }
-              }
-            });
-          });
-
-          // Observe the iframe element itself for src attribute changes
-          observer.observe(iframe, {
-            attributes: true, // Listen for attribute changes
-            attributeFilter: ["src"], // Specifically for src changes
-          });
-
-          // Clean up the observer when iframe is unloaded or component unmounts
-          iframe.onload = function () {
-            observer.disconnect();
-          };
-
-          // Catch and prevent any other link-based navigation within iframe
-          iframeDocument.addEventListener("click", (e) => {
-            const target = e.target.closest("a");
-            if (target && target.tagName === "A") {
-              e.preventDefault(); // Prevent default link behavior
-              const url = target.href;
-              iframe.src = url; // Load the URL within the iframe itself
-            }
-          });
-
-        } catch (err) {
-          console.error(
-            "Cannot access iframe content due to cross-origin policy",
-            err
-          );
-        }
-      };
-    }
-
-    // Restore original window.open when component unmounts
-    return () => {
-      window.open = originalWindowOpen;
-    };
-  }, []);
+  const navigate=useRouter();
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
-      <iframe
-        ref={iframeRef}
-        src="https://earth.nullschool.net/#current/wind/surface/level/orthographic"
-        title="Earth Viewer"
-        className="absolute top-0 left-0 w-full h-full border-0"
-        allow="fullscreen"
-      />
+    <div>
+      <header className="z-20 relative max-h-screen flex gap-4 p-4 text-center text-white overflow-hidden" style={{backgroundColor:'#054569'}}>
+        <img src="logo.svg" alt="" className="ml-[0.5vw]"/>
+        <h1 className="text-3xl tracking-wider text-center mt-1 cursor-pointer" onClick={() => navigate.push('/')}>
+          <span className="text-blue-500">S</span>hinka {" "}
+          <span className="text-blue-500">J</span>inzai
+        </h1>
+      </header>
+      <div className="absolute top-[9vh] z-0 w-full h-[93vh] overflow-hidden">
+        <iframe
+          ref={iframeRef}
+          src="https://earth.nullschool.net/#current/wind/surface/level/orthographic"
+          title="Earth Viewer"
+          className="absolute top-0 left-0 w-full h-full border-0"
+          scrolling="no"
+          allow="fullscreen"
+        />
+      </div>
     </div>
   );
-};
+}  
 
 export default EarthViewer;

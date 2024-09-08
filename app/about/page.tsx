@@ -1,6 +1,9 @@
+'use client'
 import React from 'react'
 import CardComponent from '@/components/about/CardComponent'
-const page = () => {
+import { useRouter } from 'next/navigation';
+const Page = () => {
+    const navigate=useRouter();
     const data=[
         {
             img:'cloud1.png',
@@ -53,12 +56,12 @@ const page = () => {
   return (
     <main className='bg-blue-400 h-screen w-screen'>
         <header className=" flex gap-4 p-4 text-center text-white" style={{backgroundColor:'#054569'}}>
-        <img src="logo.svg" alt="" className="ml-[0.5vw]"/>
-        <h1 className="text-3xl tracking-wider text-center mt-1">
-            <span className="text-blue-500">S</span>hinka {" "}
-            <span className="text-blue-500">J</span>inzai
-        </h1>
-        </header>
+      <img src="logo.svg" alt="" className="ml-[0.5vw]"/>
+      <h1 className="text-3xl tracking-wider text-center mt-1 cursor-pointer" onClick={()=>navigate.push('/')}>
+        <span className="text-blue-500">S</span>hinka {" "}
+        <span className="text-blue-500">J</span>inzai
+      </h1>
+    </header>
         <div className='flex justify-between px-[4vw] mt-[3vh] text-white'>
             <div>
                 <h1 className='text-3xl font-bold tracking-wider'>About <span className='text-blue-950'>S</span>hinka <span className='text-blue-950'>J</span>inzai</h1>
@@ -89,4 +92,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

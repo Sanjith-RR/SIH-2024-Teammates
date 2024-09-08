@@ -55,9 +55,8 @@ const LandingPage = () => {
         <h1 className="text-2xl font-bold">Shinka Jinzai</h1>
         <nav className="flex w-[50%] justify-around">
           <button onClick={(e)=>navigate.push("/map")}> Map </button>
-          <a href="#" className="hover:text-gray-300">Features</a>
           <button onClick={(e)=>navigate.push("/demo")}> Demo</button>
-          <a href="#" className="hover:text-gray-300">About us</a>
+          <button onClick={(e)=>navigate.push("/about")}>About us</button>
         </nav>
         <button className="border px-4 py-2 rounded text-white hover:bg-white hover:text-[#0a2540]">
           Get Started
@@ -87,7 +86,7 @@ const LandingPage = () => {
           <h2 className="text-4xl lg:text-5xl font-extrabold mb-4">
             Welcome to Shinka Jinzai!
           </h2>
-          <div className="relative left-[-20vw] mt-[10vh] w-[70%]">
+          <div className="relative mt-[15vh] w-[70%]">
               <p className="text-3xl lg:text-3xl font-semibold mb-6">
                 Transforming Satellite Imagery into Actionable Visual Stories
               </p>

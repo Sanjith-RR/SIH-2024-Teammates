@@ -24,13 +24,12 @@ export default function Home() {
     return <div>Loading...</div>; // Show a loading message or spinner while session is being fetched
   }
 
-  // if (typedSession) {
-  //   console.log(typedSession);
+  if (typedSession) {
     return (
       <LandingPage/>
     );
-  // } else {
-  //   router.push('/login'); // Redirect to login if no session
-  //   return null; // Ensure you return null to avoid rendering the rest of the page
-  // }
+  } else {
+    router.push('/login'); // Redirect to login if no session
+    return null; // Ensure you return null to avoid rendering the rest of the page
+  }
 }
