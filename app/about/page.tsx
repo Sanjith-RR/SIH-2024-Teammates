@@ -61,7 +61,7 @@ const page = () => {
         </header>
         <div className='flex justify-between px-[4vw] mt-[3vh] text-white'>
             <div>
-                <h1 className='text-3xl font-extrabold tracking-wider'>About <span className='text-blue-950'>S</span>hinka <span className='text-blue-950'>J</span>inzai</h1>
+                <h1 className='text-3xl font-bold tracking-wider'>About <span className='text-blue-950'>S</span>hinka <span className='text-blue-950'>J</span>inzai</h1>
                 <div className='text-xl flex flex-col gap-1.5 ml-2 mt-2'>
                     <p>• A generative AI powered web-application that renders a real-time video output to help represent the takeaways from the frame interpolation.</p>
                     <p>• The users of VEDAS/MOSDAC/BHUVAN can access our platform to derive their insights and address their business requirements.</p>
