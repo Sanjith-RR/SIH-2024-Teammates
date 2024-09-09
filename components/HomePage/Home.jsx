@@ -56,6 +56,11 @@ const LandingPage = () => {
         <nav className="flex w-[50%] justify-around">
           <button onClick={(e)=>navigate.push("/map")}> Map </button>
           <button onClick={(e)=>navigate.push("/demo")}> Demo</button>
+          <button onClick={(e)=>navigate.push("/earth")}> Earth</button>
+          <button onClick={(e)=>navigate.push("/world")}> World</button>
+          <button onClick={(e)=>navigate.push("/temp")}> Temperature</button>
+          <button onClick={(e)=>navigate.push("/humidity")}> Humidity</button>
+          <button onClick={(e)=>navigate.push("/press")}> Hectopascal</button>
           <button onClick={(e)=>navigate.push("/about")}>About us</button>
         </nav>
         <button className="border px-4 py-2 rounded text-white hover:bg-white hover:text-[#0a2540]">

@@ -17,6 +17,7 @@
     "firebase": "^10.13.1",
     "framer-motion": "^11.3.31",
     "leaflet": "^1.9.4",
+    "leaflet.wms": "^0.2.0",
     "my-app": "file:",
     "next": "14.2.7",
     "next-auth": "^4.24.7",
