@@ -3,7 +3,6 @@ import { useRouter } from "next/navigation";
 import React, { useRef } from "react";
 
 const EarthViewer = () => {
-  const iframeRef = useRef(null);
   const navigate = useRouter();
 
   return (
@@ -17,7 +16,6 @@ const EarthViewer = () => {
       </header>
       <div className="absolute top-[9vh] z-0 w-full h-[93vh] overflow-hidden">
         <iframe
-          ref={iframeRef}
           src="/Demo.mp4"
           title="Earth Viewer"
           className="absolute top-0 left-0 w-full h-full border-0"
