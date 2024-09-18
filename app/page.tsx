@@ -24,7 +24,7 @@ export default function Home() {
     return <div>Loading...</div>; // Show a loading message or spinner while session is being fetched
   }
 
-  if (typedSession) {
+  if (!typedSession) {
     return (
       <LandingPage/>
     );

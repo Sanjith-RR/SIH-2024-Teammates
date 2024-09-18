@@ -54,10 +54,10 @@ const LandingPage = () => {
       <header className="w-full flex justify-between h-[7vh] items-center p-6   text-white shadow-md">
         <h1 className="text-2xl font-bold">Shinka Jinzai</h1>
         <nav className="flex w-[50%] justify-around">
-          <button onClick={(e)=>navigate.push("/map")}> Map </button>
+          {/* <button onClick={(e)=>navigate.push("/map")}> Map </button> */}
           <button onClick={(e)=>navigate.push("/demo")}> Demo</button>
           <button onClick={(e)=>navigate.push("/earth")}> Earth</button>
-          <button onClick={(e)=>navigate.push("/world")}> World</button>
+          <button onClick={(e)=>navigate.push("/particulates")}> Particulates</button>
           <button onClick={(e)=>navigate.push("/temp")}> Temperature</button>
           <button onClick={(e)=>navigate.push("/humidity")}> Humidity</button>
           <button onClick={(e)=>navigate.push("/press")}> Hectopascal</button>
